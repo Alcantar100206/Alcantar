@@ -37,7 +37,7 @@ p {
 }
 
 input {
-    width: 90%;
+    width: 60%;
     height: 20px;
     border: 1px solid #ccc;
     padding: 15px;
@@ -61,13 +61,28 @@ input[type="reset"] {
 <body>
     <h1>Iniciar Sesión</h1>
     <div class="login-box">
-       
-    <script src="inicio.js"></script>
-    <form name=form action="inicio">
-        <p>Usuario: <input type="text" name="login"></p>
-        <p>Contraseña: <input type="password" name="password"></p>
-        <input onclick="ir()" type="button" value="Iniciar Sesión">
+        <form name="form" action="inicio">
+            <label for="usu">Usuario</label>
+            <input type="text" id="usu">
+            <label for="con">Contraseña</label>
+            <input type="password" id="con">
+        </form>
+        <input type="submit" value="Iniciar Sesión" id="sesion">
         <input type="reset" value="Borrar">
-    </form>
+    </div>
+    <script>
+        document.getElementById("sesion").addEventListener("click", function (e) {
+            e.preventDefault();
+            var usuarioIngresado = document.getElementById("usu").value;
+            var contrasenaIngresada = document.getElementById("con").value; // Cambio aquí
+            var usuarioValido = "metapod";
+            var contrasenaValida = "777777";
+            if (usuarioIngresado === usuarioValido && contrasenaIngresada === contrasenaValida) {
+                window.location.href = "proyecto.html";
+            } else {
+                alert("Usuario o clave incorrecta.");
+            }
+        });
+    </script>
 </body>
 </html>
