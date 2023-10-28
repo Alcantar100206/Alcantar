@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesion</title>
+    <style>
+    body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 60;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: #c9ced6;    
+}
+
+    .login-box .avatar {
+  width: 200px;
+  height: 250px;
+  border-radius: 50%;
+  position: right;
+  top: -70px;
+  left: calc(35% - 50px);
+}
+
+
+form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+p {
+    margin: 10;
+}
+
+input {
+    width: 60%;
+    height: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px;
+}
+
+input[type="button"] {
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: bold;
+}
+
+input[type="reset"] {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Iniciar Sesión</h1>
+    <div class="login-box">
+        <form name="form" action="inicio">
+            <label for="usu">Usuario</label>
+            <input type="text" id="usu">
+            <label for="con">Contraseña</label>
+            <input type="password" id="con">
+        </form>
+        <input type="submit" value="Iniciar Sesión" id="sesion">
+        <input type="reset" value="Borrar">
+    </div>
+    <script>
+        document.getElementById("sesion").addEventListener("click", function (e) {
+            e.preventDefault();
+            var usuarioIngresado = document.getElementById("usu").value;
+            var contrasenaIngresada = document.getElementById("con").value; // Cambio aquí
+            var usuarioValido = "metapod";
+            var contrasenaValida = "777777";
+            if (usuarioIngresado === usuarioValido && contrasenaIngresada === contrasenaValida) {
+                window.location.href = "proyecto.html";
+            } else {
+                alert("Usuario o clave incorrecta.");
+            }
+        });
+    </script>
+</body>
+</html>
